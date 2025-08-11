@@ -1,0 +1,14 @@
+{
+    "name": "sipendat",
+    "version": "1.0.0",
+    "description": "Sistem Informasi Penanganan Daerah Terdampak",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "body-parser": "^1.19.0",
+        "jspdf": "^2.5.1"
+    }
+}

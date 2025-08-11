@@ -1,0 +1,301 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(244, 244, 244, 0.5);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+header {
+    background-color: #0b4f97;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+}
+
+nav {
+    background-color: #041d39;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+    background-color: #041d39;
+    border-radius: 5px;
+}
+
+main {
+    flex: 1 0 auto;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    background-image: url('Logo_KKN_Transparant.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 450px auto;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: block;
+    text-align: justify;
+}
+
+/* Penyesuaian khusus untuk section yang diminta */
+#beranda {
+    text-align: center;
+}
+
+#beranda p {
+    text-align: justify;
+}
+
+#login {
+    text-align: center;
+}
+
+#kelurahan-login {
+    text-align: center;
+}
+
+#boklet {
+    text-align: center;
+}
+
+#boklet p {
+    text-align: justify;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #041d39;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #267118;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #267118;
+}
+
+#download-pdf {
+    background-color: #267118;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: #041d39;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    z-index: 1;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.image-preview {
+    margin-top: 10px;
+    max-width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.poster-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+/* Media Queries untuk responsivitas */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    .login-form {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .poster-image {
+        max-height: 200px;
+    }
+}
+.emergency-calc {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.emergency-calc h3 {
+    text-align: center;
+    color: #041d39;
+}
+
+.emergency-calc .form-group {
+    margin-bottom: 15px;
+}
+
+.emergency-calc label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.emergency-calc input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #041d39;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.emergency-calc button {
+    width: 100%;
+    padding: 10px;
+    background-color: #267118;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.emergency-calc button:hover {
+    background-color: #1e5b13;
+}

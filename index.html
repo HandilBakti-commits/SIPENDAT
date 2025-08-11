@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIPENDAT - Sistem Informasi Penanganan Daerah Terdampak</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        main {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #Alur-evakuasi {
+            background-color: white;
+            width: 100%;
+            height: calc(100vh - 150px); /* Sesuai dengan tinggi header dan nav */
+            overflow: auto;
+            position: relative;
+        }
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+            object-fit: contain;
+        }
+        .poster-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SIPENDAT</h1>
+        <p>"Sistem Informasi Penanganan Daerah Terdampak"</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#beranda" onclick="showSection('beranda')">Beranda</a></li>
+            <li><a href="#Alur-evakuasi" onclick="showSection('Alur-evakuasi')">Alur Siaga Bencana</a></li>
+            <li><a href="#Alur-distribusi" onclick="showSection('Alur-distribusi')">Alur Pendistribusian Pangan Darurat</a></li>
+            <li><a href="#dana-darurat" onclick="showSection('dana-darurat')">Dana Darurat</a></li>
+            <li><a href="#diversifikasi-pangan" onclick="showSection('diversifikasi-pangan')">Diversifikasi Pangan Darurat</a></li>
+            <li><a href="#boklet" onclick="showSection('boklet')">Booklet Edukasi Kebencanaan</a></li>
+            <li><a href="#login" onclick="showSection('login')">Login Ketua RT</a></li>
+            <li><a href="#kelurahan-login" onclick="showSection('kelurahan-login')">Login Kelurahan</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="beranda" class="active">
+            <h2>Selamat Datang di SIPENDAT</h2>
+            <p>SIPENDAT, merupakan singkatan dari Sistem Informasi Penanganan Daerah Terdampak, adalah platform inovatif yang dirancang khusus untuk membantu warga Kelurahan Handil Bakti, Palaran, Samarinda, dalam menghadapi berbagai jenis bencana. Dengan meningkatnya frekuensi bencana alam seperti banjir di wilayah ini, SIPENDAT hadir sebagai solusi terpadu untuk memastikan informasi penanganan dapat diakses dengan cepat dan efisien. Website ini bertujuan untuk memperkuat koordinasi antara warga, ketua RT, dan pihak kelurahan, sehingga respons terhadap bencana dapat dilakukan secara terorganisir dan tepat waktu.</p>
+            <p>Salah satu fitur utama SIPENDAT adalah penyediaan alur yang mencakup evakuasi banjir, distribusi bantuan pangan, serta diversifikasi pangan darurat. Selain itu, terdapat boklet edukasi dan informasi tentang dana darurat yang dapat dimanfaatkan warga untuk mempersiapkan diri menghadapi situasi kritis. Ketua RT dapat login ke sistem untuk melaporkan jenis bencana, jumlah rumah dan kepala keluarga (KK) yang terdampak, lengkap dengan tanggal kejadian, sehingga data ini menjadi dasar bagi kelurahan dalam mengambil keputusan. Fitur ini memungkinkan pelaporan yang akurat dan terarah langsung dari lapangan.</p>
+            <p>Pihak kelurahan juga dapat memanfaatkan SIPENDAT untuk mengunduh laporan dalam format PDF yang terorganisir, memudahkan analisis dan perencanaan bantuan. Dengan desain yang user-friendly dan dukungan teknologi modern, SIPENDAT tidak hanya menjadi alat penanganan bencana, tetapi juga sarana edukasi dan pencegahan bagi masyarakat. Kami berkomitmen untuk terus mengembangkan sistem ini agar dapat memberikan manfaat maksimal, sekaligus mendukung ketahanan masyarakat Kelurahan Handil Bakti terhadap berbagai tantangan bencana di masa depan. Mari bersama-sama memanfaatkan SIPENDAT untuk menciptakan lingkungan yang lebih aman dan tangguh.</p>
+        </section>
+        <section id="Alur-evakuasi" class="hidden">
+            <iframe src="Poster Publik Mitigasi Bencana Alam Tsunami Illustratif Biru dan Hijau_20250806_212228_0000.pdf#view=FitH" class="pdf-viewer" title="Alur Evakuasi Bencana"></iframe>
+        </section>
+        <section id="Alur-distribusi" class="hidden">
+            <img src="POSTER.jpg" alt="Poster Distribusi Pangan Darurat" class="poster-image">
+        </section>
+        <section id="dana-darurat" class="hidden">
+            <div class="emergency-calc">
+                <h3>Hitung Dana Darurat Anda</h3>
+                <form id="emergency-fund-form">
+                    <div class="form-group">
+                        <label for="income">Pendapatan per Bulan (Rp):</label>
+                        <input type="number" id="income" required placeholder="Contoh: 3000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="expenses">Pengeluaran per Bulan (Rp):</label>
+                        <input type="number" id="expenses" required placeholder="Contoh: 2000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="family-members">Jumlah Orang dalam KK:</label>
+                        <input type="number" id="family-members" required placeholder="Contoh: 4">
+                    </div>
+                    <button type="submit">Hitung Dana Darurat</button>
+                </form>
+                <p id="result" style="font-weight: bold; margin-top: 15px;"></p>
+            </div>
+            <div style="margin-top: 40px;">
+                <img src="Dana_Darurat.png" alt="Poster Dana Darurat" class="poster-image">
+            </div>
+        </section>
+        <section id="diversifikasi-pangan" class="hidden">
+            <img src="Poster Diversifikasi Pangan Darurat.jpg" alt="Poster Diversifikasi Pangan Darurat" class="poster-image">
+        </section>
+        <section id="boklet" class="hidden">
+            <h2>Booklet Edukasi Kebencanaan</h2>
+            <p>Dalam hari-hari yang terlihat tenang, bencana alam kerap muncul di waktu yang tidak terduga. Bencana alam tersebut memberikan tantangan dalam hidup. Dalam menghadapi hal tersebut, masyarakat Handil Bakti di Kecamatan Palaran, Samarinda, berusaha untuk memperkuat kesiapsiagaan dan ketangguhan menghadapi banjir dan potensi bencana lainnya.</p>
+            <p>Buklet ini hadir sebagai panduan praktis yang memberikan informasi lengkap dan langkah-langkah strategi. Khususnya dalam hal menanggapi berbagai bencana alam seperti banjir, tanah longsor, puting beliung, hingga kebakaran.</p>
+            <p>Buklet ini mengajak setiap warga untuk aktif berperan dalam mitigasi risiko bencana. Dilengkapi dengan alur kesiapsiagaan, manajemen dana darurat, hingga sistem distribusi bantuan pangan yang efektif. Dengan informasi yang mudah dipahami dan panduan yang dapat langsung diterapkan, Kelurahan Handil Bakti siap menjadi tangguh dan penuh harapan dalam menghadapi segala situasi darurat.</p>
+            <p>Mari bersama menjaga keamanan, menghadapi masalah, dan membangun ketangguhan demi menyelamatkan masa depan kita dari ancaman bencana.</p>
+            <p>Untuk info lebih lanjut, silakan klik <a href="Online Flipbook.html" target="_blank">link ini</a>.</p>
+        </section>
+        <section id="login" class="hidden">
+            <h2>Login Ketua RT</h2>
+            <form id="rt-login-form" class="login-form">
+                <div class="form-group">
+                    <label for="rt-username">Username:</label>
+                    <input type="text" id="rt-username" required placeholder="Contoh: ketua_RT1">
+                </div>
+                <div class="form-group">
+                    <label for="rt-password">Password:</label>
+                    <input type="password" id="rt-password" required placeholder="Kata sandi">
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <section id="report-form" class="hidden">
+                <h2>Laporan Bencana</h2>
+                <form id="disaster-report-form">
+                    <div class="form-group">
+                        <label for="report-date">Tanggal Laporan:</label>
+                        <input type="date" id="report-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="disaster-type">Jenis Bencana:</label>
+                        <input type="text" id="disaster-type" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="affected-houses">Jumlah Rumah Terdampak:</label>
+                        <input type="number" id="affected-houses" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="affected-families">Jumlah KK Terdampak:</label>
+                        <input type="number" id="affected-families" required>
+                    </div>
+                    <button type="submit">Upload Laporan</button>
+                </form>
+            </section>
+        </section>
+        <section id="kelurahan-login" class="hidden">
+            <h2>Login Kelurahan</h2>
+            <form id="kelurahan-login-form" class="login-form">
+                <div class="form-group">
+                    <label for="kelurahan-username">Username:</label>
+                    <input type="text" id="kelurahan-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="kelurahan-password">Password:</label>
+                    <input type="password" id="kelurahan-password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <section id="report-download" class="hidden">
+                <h2>Unduh Laporan Bencana</h2>
+                <button id="download-pdf">Unduh Laporan (PDF)</button>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 SIPENDAT - Sistem Informasi Penanganan Daerah Terdampak Kelurahan Handil Bakti, Palaran, Samarinda. Semua hak cipta dilindungi.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
